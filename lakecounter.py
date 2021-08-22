@@ -7,15 +7,18 @@
  Assumption:  The matrix is assumed to be a 2d list with integer 0s and 1s.
  Solution:    Executing this file will print out the sample matrix used and the total number of lakes found.
 """
+import copy
 
-def count_lakes(matrix):
+def count_lakes(mat):
     """
     This method  solves question Count of Lakes.
+        :param mat A matrix with integers 0s and 1s
     """
-    if not matrix or len(matrix) == 0:
+    if not mat or len(mat) == 0:
         print("Invalid matrix")
         return 0
     num_lakes = 0
+    matrix = copy.deepcopy(mat)
     num_row = len(matrix)
     num_col = len(matrix[0])
     for i in range(0, num_row):
