@@ -14,7 +14,7 @@
               pip install pygithub
  Solution:    Executing this file will generate a csv file containing required info from github project guava
               to the same file location. A generated pr_result.csv is attached because running this program takes
-              around 20 mins.
+              around 20 mins. Also update the github token in line 36 before executing the program.
               Reviewers, Comments, Number of Participants are not available from github Pulls API, so I crawl the
               pull request page to get them; others are retrieved from Pulls API.
 """
@@ -33,7 +33,7 @@ csv_writer.writerow(["Title","Labels","Reviewers","Assignees","Comments","Opened
                      "Number of changed files","Number of participants"])
 start = time.time()
 print("Crawling Pull Requests from guava...")
-github_instance = Github("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") # github instance with my token, change here to use other tokens
+github_instance = Github("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") # TODO: Change the github token here
 repo = github_instance.get_repo("google/guava") # Change here to parse another repo
 pull_requests = repo.get_pulls(state='all', sort='created') # Use Pulls API to get all pull requests
 
