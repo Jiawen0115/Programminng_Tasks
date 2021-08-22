@@ -5,6 +5,6 @@
    pip install requests, 
    pip install bs4, 
    pip install pygithub
-   Run this file on guava repo takes around 20 mins
-3. pr_result.csv is sample output from crawler.py.
-4. See more details in code comments.
+3. In crawler.py: Line 36, change the github token here before running the program
+4. pr_result.csv is sample output from crawler.py.
+5. See more details in code comments.
